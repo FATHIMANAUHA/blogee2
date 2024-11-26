@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Featured Image Section */
+        .featured-image {
+            position: relative;
+            width: 75%;  /* This sets the width of the image */
+            height: 400px;  /* The height of the image */
+            margin: 0 auto;  /* Horizontally center the image */
+            margin-top: 50px;  /* Add space at the top */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Blog Content Section */
+        .blog-content {
+            width: 85%;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .meta-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #7f8c8d;
+        }
+
+        .meta-details .categories {
+            background-color: #16a085;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .meta-details span {
+            font-weight: 500;
+        }
+
+        /* Blog Text */
+        .blog-text h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .blog-text p {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .blog-text ul {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .blog-text ul li {
+            margin-bottom: 10px;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .blog-text img {
+         
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer Section */
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+        
+        .footer-navigation .nav-link {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        
+        .footer-navigation .nav-link:hover {
+            color: #0056b3;
+        }
+        
+        .social-media-sharing {
+            text-align: right;
+        }
+        
+        .social-media-sharing h3 {
+            margin-bottom: 10px;
+        }
+        
+        .social-media-sharing .social-icon {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .social-media-sharing .social-icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-content {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .meta-details {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .blog-text h1 {
+                font-size: 2em;
+            }
+
+            .blog-text p,
+            .blog-text ul {
+                font-size: 1em;
+            }
+
+            .featured-image img {
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+        <!--  -->
+        @media (max-width: 1024px) {
+            .featured-image {
+                width: 90%;  /* Adjust the width for smaller screens */
+                height: 300px;  /* Adjust the height of the featured image */
+            }
+        
+            .blog-content {
+                width: 90%;  /* Adjust content width */
+                padding: 15px;  /* Adjust padding */
+            }
+        
+            .meta-details {
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 1em;  /* Adjust font size */
+            }
+        
+            .meta-details .categories {
+                margin-top: 10px;
+            }
+        
+            .blog-text h1 {
+                font-size: 2em;  /* Smaller h1 for smaller screens */
+            }
+        
+            .blog-text p,
+            .blog-text ul {
+                font-size: 1em;  /* Adjust text size */
+            }
+        
+            .footer-navigation {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .social-media-sharing {
+                text-align: center;  /* Center align icons */
+                margin-top: 20px;
+            }
+        
+            .social-media-sharing .social-icon {
+                margin-left: 15px;  /* Space out icons for smaller screens */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-image {
+                width: 100%;  /* Make image fill the screen */
+                height: 250px;  /* Make image height smaller */
+            }
+        
+            .blog-content {
+                width: 100%;  /* Make content width 100% */
+                padding: 10px;  /* Reduce padding for smaller screens */
+            }
+        
+            .meta-details {
+                flex-direction: column;
+                font-size: 0.9em;  /* Further reduce font size */
+                margin-bottom: 10px;
+            }
+        
+            .blog-text h1 {
+                font-size: 1.8em;  /* Reduce h1 font size further */
+            }
+        
+            .blog-text p,
+            .blog-text ul {
+                font-size: 0.9em;  /* Adjust text size */
+            }
+        
+            .blog-text img {
+                width: 100%;  /* Ensure images are responsive */
+                height: auto;
+            }
+        
+            .footer-navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .social-media-sharing {
+                margin-top: 20px;
+                text-align: center;
+            }
+        
+            .social-media-sharing .social-icon {
+                margin-left: 12px;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Featured Image Section -->
+    <section class="featured-image">
+        <img src="img/sky.jpeg" alt="Featured Image">
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="blog-content">
+        <div class="meta-details">
+            <span class="author">By Author: Alex</span>
+            <span class="date">Published: 10-Jan-2024</span>
+            <span class="categories">Categories: Design, Web Development</span>
+        </div>
+
+        <div class="blog-text">
+            <h1>The Evolution of Web Design</h1>
+            <p>Web design has evolved significantly over the years. In the early days of the internet, websites were simple and static, with minimal interaction or user experience (UX). However, as technology has advanced, so too has web design, allowing for a more interactive, responsive, and dynamic online experience.</p>
+
+            <ul>
+                <li>Understanding the fundamentals of web design</li>
+                <li>Responsive design principles</li>
+                <li>Integrating modern web technologies</li>
+                <li>Keeping design clean and simple</li>
+            </ul>
+
+            <img src="img/horiizondal.jpeg" alt="Design Image">
+
+            <h1>Innovative Trends in Web Design</h1>
+            <p>Today, web design trends are shaped by the demand for mobile responsiveness, faster load times, and user-friendly interfaces. Web designers are utilizing new technologies such as AI, voice search, and minimalistic design elements to improve overall user experience.</p>
+
+            <img src="img/hori.png" alt="Trends Image">
+
+            <h1>Looking Forward to the Future</h1>
+            <p>As technology continues to evolve, so will the web design industry. Future trends include greater integration of augmented reality (AR), voice interfaces, and immersive experiences. Web designers will continue to push the boundaries to create more engaging and interactive websites.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="blog-footer">
+        <div class="footer-navigation">
+            <a href="index.html" class="nav-link">← Previous Blog</a>
+            <a href="blog.html" class="nav-link">Next Blog →</a>
+        </div>
+        <div class="social-media-sharing">
+            <h3>Share this post:</h3>
+            <a href="#" class="social-icon" title="Share on Facebook">
+                <img src="img/facebook icon.jpeg" alt="Facebook">
+            </a>
+            <a href="#" class="social-icon" title="Share on Twitter">
+                <img src="img/twitter icon.png" alt="Twitter">
+            </a>
+            <a href="#" class="social-icon" title="Share on LinkedIn">
+                <img src="img/linkedin icon.png" alt="LinkedIn">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
